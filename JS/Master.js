@@ -123,23 +123,31 @@ bulletsSpan.forEach((span) => {
 });
 
 // start landing
+// Select Landing Page Element
+let landingPage = document.querySelector(".landing-page");
 
-let landing = document.querySelector(".landing-page");
-let img = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
+// Get Array Of Imgs
+let imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
 
-// start landing
+// Function To Randomize Imgs
+function randomizeImgs() {
 
-let backinterva = () => {
-  if (backoption === true) {
-    changBack = setInterval(function () {
-      let randimg = Math.floor(Math.random() * img.length);
-      landing.style.cssText = `
-  background-image: url(../imgs/${img[randimg]});
-  `;
-    }, 5000);
+  if (backgroundOption === true) {
+
+    backgroundInterval = setInterval(() => {
+
+      // Get Random Number
+      let randomNumber = Math.floor(Math.random() * imgsArray.length);
+    
+      // Change Background Image Url 
+      landingPage.style.backgroundImage = 'url("imgs/' + imgsArray[randomNumber] + '")';
+    
+    }, 1000);
+
   }
-};
-backinterva();
+
+}
+
 
 // Skills
 
